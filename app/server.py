@@ -9,11 +9,11 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/uc?export=download&id=1_FqBemtqt-OAn_b0Y8apXOlaqTOfDc7y'
-export_file_name = 'export.pkl'
+export_file_url = 'https://doc-00-38-docs.googleusercontent.com/docs/securesc/46jp2oq35d9balrq04rlm76jfatmdbdt/1t94pdnlevpu59tas0t8idrjaodlulei/1569607200000/15484545443788702139/15484545443788702139/1_FqBemtqt-OAn_b0Y8apXOlaqTOfDc7y?e=download'
+export_file_name = 'stage-1.pth'
 
 classes = ['cardboard', 'glass','metal','paper','plastic', 'trash']
-path = Path(__file__).parent
+path = Path(file).parent
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
