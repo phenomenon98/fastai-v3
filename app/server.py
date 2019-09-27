@@ -13,7 +13,7 @@ export_file_url = 'https://doc-00-38-docs.googleusercontent.com/docs/securesc/46
 export_file_name = 'stage-1.pth'
 
 classes = ['cardboard', 'glass','metal','paper','plastic', 'trash']
-path = Path(file).parent
+path = Path(__file__).parent
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
