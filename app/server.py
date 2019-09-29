@@ -9,7 +9,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/uc?export=download&id=1_FqBemtqt-OAn_b0Y8apXOlaqTOfDc7y'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1xLMZbwPFaT8AgkxTOkm9gucQOhPz4uss'
 export_file_name = 'export.pkl'
 #
 
@@ -20,7 +20,6 @@ app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
 
-'''
 async def download_file(url, dest):
     if dest.exists(): return
     async with aiohttp.ClientSession() as session:
@@ -28,10 +27,10 @@ async def download_file(url, dest):
             data = await response.read()
             with open(dest, 'wb') as f:
                 f.write(data)
-'''
+
 
 async def setup_learner():
-    #await download_file(export_file_url, path / export_file_name)
+    await download_file(export_file_url, path / export_file_name)
     try:
         learn = load_learner(path, export_file_name)
         return learn
