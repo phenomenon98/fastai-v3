@@ -9,8 +9,8 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/uc?authuser=0&id=1PWLjdmaB0rBwFcn8HYR2DiFQh3SZ5Xs_&export=download'
-export_file_name = 'smartbin_v3.pkl'
+export_file_url = 'https://drive.google.com/uc?authuser=0&id=1t_JpQxcknksP_75Bk0uqIi0YfeqORMIf&export=download'
+export_file_name = 'exportmainproject_v3.pkl'
 #
 
 classes = ['cardboard', 'glass','metal','paper','plastic', 'trash']
