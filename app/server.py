@@ -9,16 +9,17 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://drive.google.com/uc?authuser=0&id=1t_JpQxcknksP_75Bk0uqIi0YfeqORMIf&export=download'
-export_file_name = 'exportmainproject_v3.pkl'
+export_file_url = 'https://drive.google.com/uc?export=download&id=1EqZ9tupQyaps9OvdEJ18yzwnLv3_Z4aY'
+export_file_name = 'smartbin_v3.pkl'
 #
 
 classes = ['cardboard', 'glass','metal','paper','plastic', 'trash']
-path = Path(__file__).parent
+ath = Path(__file__).parent
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
+
 
 async def download_file(url, dest):
     if dest.exists(): return
